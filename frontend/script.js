@@ -1,16 +1,18 @@
 let produtos = [];
 
-
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-
 fetch("http://localhost:3000/produtos")
   .then(res => res.json())
   .then(data => {
     produtos = data;
     renderProdutos();
     atualizarCarrinho();
-  });
+  })
+  .catch(err => console.error(err));
+
+
+
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
 
 
 const container = document.getElementById("produtos");
@@ -24,6 +26,8 @@ document.getElementById("btnCarrinho").onclick = () => {
 };
 
 function renderProdutos() {
+  container.innerHTML = ""; // 👈 ADICIONE ESTA LINHA
+
   produtos.forEach(produto => {
     const div = document.createElement("div");
     div.classList.add("produto");

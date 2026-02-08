@@ -2,19 +2,13 @@
   {
     "id": 1,
     "nome": "Camiseta Básica",
-    "preco": 59.9,
+    "preco": 59.90,
     "imagem": "https://via.placeholder.com/300"
   },
   {
     "id": 2,
     "nome": "Calça Jeans",
-    "preco": 129.9,
-    "imagem": "https://via.placeholder.com/300"
-  },
-  {
-    "id": 3,
-    "nome": "Vestido Floral",
-    "preco": 149.9,
+    "preco": 129.90,
     "imagem": "https://via.placeholder.com/300"
   }
 ]
