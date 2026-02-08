@@ -4,7 +4,8 @@ const produtos = [
   { id: 3, nome: "Vestido Floral", preco: 149.90, imagem: "https://via.placeholder.com/300" }
 ];
 
-let carrinho = [];
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
 
 const container = document.getElementById("produtos");
 const listaCarrinho = document.getElementById("listaCarrinho");
@@ -60,6 +61,9 @@ function atualizarCarrinho() {
 
   totalSpan.innerText = total.toFixed(2);
   qtdSpan.innerText = carrinho.length;
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
 }
 
 renderProdutos();
+atualizarCarrinho();

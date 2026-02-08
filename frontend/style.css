@@ -1,53 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 20px 30px;
+  position: relative;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
 }
 
 header button {
-  background: #ff4081;
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+
+header h1 {
+  font-size: 22px;
+}
+
+header button {
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+header button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* PRODUTOS */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.produto {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.produto h3 {
+  margin: 12px 0 6px;
+}
+
+.produto p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.produto button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.produto button:hover {
+  background: #333;
+}
+
+/* CARRINHO */
 .carrinho {
   background: #fff;
-  margin: 20px;
+  margin: 20px 40px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 6px;
+}
+
+.carrinho h2 {
+  margin-bottom: 10px;
 }
 
 .carrinho ul {
   list-style: none;
-  margin: 10px 0;
 }
 
 .carrinho li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .carrinho button {
-  background: red;
+  background: #000;
+  color: #fff;
   border: none;
-  color: white;
-  padding: 5px;
+  padding: 4px 8px;
   cursor: pointer;
+}
+
+.carrinho button:hover {
+  background: #333;
+}
+
+.finalizar {
+  margin-top: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.finalizar:hover {
+  background: #333;
 }
 
 .oculto {
   display: none;
-}
-
-.finalizar {
-  background: #000;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  cursor: pointer;
 }
