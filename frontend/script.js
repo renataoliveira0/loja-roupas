@@ -1,10 +1,16 @@
-const produtos = [
-  { id: 1, nome: "Camiseta Básica", preco: 59.90, imagem: "https://via.placeholder.com/300" },
-  { id: 2, nome: "Calça Jeans", preco: 129.90, imagem: "https://via.placeholder.com/300" },
-  { id: 3, nome: "Vestido Floral", preco: 149.90, imagem: "https://via.placeholder.com/300" }
-];
+let produtos = [];
+
 
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+
+fetch("http://localhost:3000/produtos")
+  .then(res => res.json())
+  .then(data => {
+    produtos = data;
+    renderProdutos();
+    atualizarCarrinho();
+  });
 
 
 const container = document.getElementById("produtos");
@@ -65,5 +71,4 @@ function atualizarCarrinho() {
 
 }
 
-renderProdutos();
 atualizarCarrinho();
