@@ -76,3 +76,33 @@ function atualizarCarrinho() {
 }
 
 atualizarCarrinho();
+function finalizarCompra() {
+  if (carrinho.length === 0) {
+    alert("Seu carrinho está vazio");
+    return;
+  }
+
+  const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
+
+  fetch("http://localhost:3000/pedidos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      itens: carrinho,
+      total: total
+    })
+  })
+    .then(res => res.json())
+    .then(() => {
+      alert("Pedido realizado com sucesso!");
+      carrinho = [];
+      localStorage.removeItem("carrinho");
+      atualizarCarrinho();
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Erro ao finalizar pedido");
+    });
+}

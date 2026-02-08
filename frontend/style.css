@@ -142,3 +142,63 @@ header button:hover {
 .oculto {
   display: none;
 }
+/* =========================
+   RESPONSIVO - MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header button {
+    right: 15px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .produto {
+    padding: 12px;
+  }
+
+  .produto h3 {
+    font-size: 16px;
+  }
+
+  .produto p {
+    font-size: 15px;
+  }
+
+  .produto button {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .carrinho {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .carrinho h2 {
+    font-size: 18px;
+  }
+
+  .carrinho li {
+    font-size: 14px;
+  }
+
+  .finalizar {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
